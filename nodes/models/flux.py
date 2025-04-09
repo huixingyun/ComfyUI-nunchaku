@@ -158,12 +158,14 @@ class NunchakuFluxDiTLoader:
                 ]
                 local_folders.update(local_folders_)
         model_paths = sorted(list(local_folders))
-        ngpus = torch.cuda.device_count()
+        # ngpus = torch.cuda.device_count()
 
-        all_turing = True
-        for i in range(torch.cuda.device_count()):
-            if not is_turing(f"cuda:{i}"):
-                all_turing = False
+        # all_turing = True
+        # for i in range(torch.cuda.device_count()):
+        #     if not is_turing(f"cuda:{i}"):
+        #         all_turing = False
+        ngpus = 1
+        all_turing = False
 
         if all_turing:
             attention_options = ["nunchaku-fp16"]  # turing GPUs do not support flashattn2
