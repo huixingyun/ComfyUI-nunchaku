@@ -1,6 +1,10 @@
-GPUtil
 diffusers>=0.32.2
 accelerate
 sentencepiece
 protobuf
 huggingface_hub
+insightface
+opencv-python
+facexlib
+onnxruntime
+timm
