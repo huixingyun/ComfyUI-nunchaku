@@ -196,6 +196,10 @@ class NunchakuFluxDiTLoader:
             if not is_turing(f"cuda:{i}"):
                 all_turing = False
 
+        # !!!! force gpu and turing type !!!!
+        ngpus = 1
+        all_turing = False
+
         if all_turing:
             attention_options = ["nunchaku-fp16"]  # turing GPUs do not support flashattn2
             dtype_options = ["float16"]
